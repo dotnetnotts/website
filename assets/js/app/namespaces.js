@@ -1,0 +1,4 @@
+var NottsDotNet = {
+	Constants: {},
+	ViewModels: {}
+};
