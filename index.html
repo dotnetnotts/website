@@ -48,7 +48,7 @@
       		</div>
     	</nav>
 
-    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'Nottingham .NET User Group', sourceOnShow: 'home.html', with: home }"></div>
+    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'Nottingham .NET User Group', sourceOnShow: 'home.html', withOnShow: getViewModel }"></div>
 
     	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - Nottingham .NET User Group', sourceOnShow: 'events.html', with: events }"></div>
 
@@ -56,7 +56,7 @@
 		
     	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - Nottingham .NET User Group', sourceOnShow: 'sponsors.html', with: sponsors }"></div>
 
-    	<div data-bind="page: { id: 'venue', title: 'Venue - Nottingham .NET User Group', sourceOnShow: 'venue.html', with: venue }"></div>
+    	<div data-bind="page: { id: 'venue', title: 'Venue - Nottingham .NET User Group', sourceOnShow: 'venue.html', withOnShow: venueOnShow, sourceCache: true }"></div>
 
 		<div class="section-colored">
       		<div class="container">
@@ -99,11 +99,79 @@
 	    <script type="text/javascript" src="assets/js/libs/bootstrap.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/plugins.js"></script>
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
 	    <script type="text/javascript" src="assets/js/app/namespaces.js"></script>
 	    <script type="text/javascript" src="assets/js/app/constants.js"></script>
 	    <script type="text/javascript" src="assets/js/app/events-summary-view-model.js"></script>
 
+
+	    <script>
+		    var gurequire = function(viewModelFactory) {
+		    	var self = this;
+
+		    	var _viewModels = [];
+		    	var _viewModelFactory = viewModelFactory;
+
+		    	self.getViewModel = function(id) {
+	    			var viewModel = _viewModels[id];
+	    			if (!viewModel) {
+	    				viewModel = _viewModelFactory.initViewModel(id);
+	    				_viewModels[id] = viewModel;
+	    			}
+	    			return viewModel;
+		    	};
+		    };
+
+		    var viewModelFactory = {
+		    	initViewModel: function(id) {
+	    			switch (id) {
+	    				case "home":
+	    					return new NottsDotNet.ViewModels.EventsSummaryViewModel(2);
+
+	    				case "events":
+	    					return new NottsDotNet.ViewModels.EventsSummaryViewModel(10);
+	    			}
+		    	}
+		    };
+
+		    var require = new gurequire(viewModelFactory);
+
+	    	var getViewModel = function(callback, page) {
+    			var viewModel = require.getViewModel(page.id());
+    			callback(viewModel);
+	    	};
+
+		    var venueOnShow = function(callback, page) {
+		        var location = new google.maps.LatLng(52.93000030517578,-1.159999966621399);
+
+		        var mapOptions = {
+		          	zoom: 13,
+		          	center: location,
+		          	mapTypeId: google.maps.MapTypeId.ROADMAP,
+		          	scrollwheel: true,
+		          	draggable: true
+		        };
+
+		        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+		        var contentString = '<p style="line-height: 20px;"><strong>Banzhow Template</strong></p><p>123 My Street, Banzhow City, CA 4567</p>';
+
+		        var infowindow = new google.maps.InfoWindow({
+		          	content: contentString
+		        });
+
+		        var marker = new google.maps.Marker({
+		          	position: location,
+		          	map: map,
+		          	title: "Venue"
+		        });
+
+		        google.maps.event.addListener(marker, "click", function() {
+		          	infowindow.open(map, marker);
+		        });
+		    };
+	    </script>
 	    <script>
 	    	pager.Href.hash = '#!/';
 
@@ -116,7 +184,6 @@
 	    		self.events = eventsViewModel;
 	    		self.event = null;
 	    		self.sponsors = null;
-	    		self.venue = null;
 	    	};
 
 	    	pager.extendWithPage(viewModel);
