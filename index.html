@@ -7,6 +7,7 @@
 	    <meta name="description" content="Nottingham .NET User Group">
 	    <meta name="author" content="Weiran Zhang, Marvin Rounce">
 	    <meta name="HandheldFriendly" content="True" />
+		<base href=""/>
 
 	    <title>Nottingham .NET User Group</title>
 
@@ -32,7 +33,7 @@
 		        <div class="collapse navbar-collapse navbar-ex1-collapse">
 			        <ul class="nav navbar-nav navbar-right">
             			<li data-bind="css: { active: pager.activePage$().getId() === 'home' }">
-            				<a data-bind="page-href: ''" href="#">Home</a>
+            				<a data-bind="page-href: 'home'" href="#">Home</a>
             			</li>
             			<li data-bind="css: { active: pager.activePage$().getId() === 'events' }">
             				<a data-bind="page-href: 'events'" href="#">Events</a>
@@ -98,6 +99,7 @@
 	    <script type="text/javascript" src="assets/js/libs/underscore.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/bootstrap.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
+	    <script type="text/javascript" src="assets/js/libs/history.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/plugins.js"></script>
 	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
@@ -173,22 +175,20 @@
 		    };
 	    </script>
 	    <script>
-	    	pager.Href.hash = '#!/';
-
-	    	var homeViewModel = new NottsDotNet.ViewModels.EventsSummaryViewModel(2);
-	    	var eventsViewModel = new NottsDotNet.ViewModels.EventsSummaryViewModel(10);
+	    	pager.useHTML5history = true;
+	    	pager.Href5.history = History;
 
 	    	var viewModel = new function() { 
 	    		var self = this;
-	    		self.home = homeViewModel;
-	    		self.events = eventsViewModel;
+	    		self.home = null;
+	    		self.events = null;
 	    		self.event = null;
 	    		self.sponsors = null;
 	    	};
 
 	    	pager.extendWithPage(viewModel);
 	    	ko.applyBindings(viewModel);
-			pager.start();
+			pager.startHistoryJs();
 	    </script>
 	</body>
 </html>
