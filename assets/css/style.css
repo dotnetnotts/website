@@ -178,6 +178,9 @@ blockquote p {
 }
 
 .navbar-inverse .navbar-brand{
+  background-image: url(../img/logo.png);
+  text-indent: -100000px;
+  width: 304px;
   font-family: 'pacificoregular';
   font-size: 30px;
   line-height: 40px;
