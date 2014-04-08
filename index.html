@@ -7,7 +7,7 @@
 	    <meta name="description" content="Nottingham .NET User Group">
 	    <meta name="author" content="Weiran Zhang, Marvin Rounce">
 	    <meta name="HandheldFriendly" content="True" />
-		<base href=""/>
+		<base href="http://dotnetnotts.co/"/>
 
 	    <title>dot net notts</title>
 
@@ -36,7 +36,7 @@
 		        <div class="collapse navbar-collapse navbar-ex1-collapse">
 			        <ul class="nav navbar-nav navbar-right">
             			<li data-bind="css: { active: pager.activePage$().getId() === 'home' }">
-            				<a href="/">Home</a>
+            				<a data-bind="page-href: '/'" href="/">Home</a>
             			</li>
             			<li data-bind="css: { active: pager.activePage$().getId() === 'events' }">
             				<a data-bind="page-href: 'events'" href="#">Events</a>
