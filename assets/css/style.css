@@ -177,10 +177,7 @@ blockquote p {
   border-color: #16A085;
 }
 
-.navbar-inverse .navbar-brand{
-  background-image: url(../img/logo.png);
-  text-indent: -100000px;
-  width: 304px;
+.navbar-inverse .navbar-brand {
   font-family: 'pacificoregular';
   font-size: 30px;
   line-height: 40px;

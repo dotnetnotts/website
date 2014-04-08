@@ -7,3 +7,20 @@
 		        	</div>
 		      	</div>
 		    </div>
+
+		    <div class="container container-int">
+			    <!--ko foreach: events-->
+		    	<div class="row">
+			        <div class="col-md-5 col-sm-5" style="text-align: center;">
+			          <span style="font-family: 'pacificoregular'; font-size: 64px;">.net</span>
+			        </div>
+			        <div class="col-md-7 col-sm-7">
+			          	<h3><a data-bind="attr: { href: '#!/event/' + id }, text: name"></a></h3>
+			          	<h4 style="margin-bottom: 40px" data-bind="text: moment(time).format('dddd MMMM Do, YYYY [at] h:mm a')"></h4>
+			          	<a class="btn btn-primary btn-lg" data-bind="attr: { href: event_url }"><!--ko text:yes_rsvp_count--><!--/ko--> Attending <i class="fa fa-angle-right"></i></a>
+			          	<a class="btn btn-default" data-bind="attr: { href: event_url }">Map of venue <i class="fa fa-angle-right"></i></a>
+			        </div>
+		    	</div>
+		    	<hr />
+			    <!--/ko-->
+		    </div>
