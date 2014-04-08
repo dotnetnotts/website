@@ -7,7 +7,6 @@
 	    <meta name="description" content="Nottingham .NET User Group">
 	    <meta name="author" content="Weiran Zhang, Marvin Rounce">
 	    <meta name="HandheldFriendly" content="True" />
-		<base href="http://dotnetnotts.co/"/>
 
 	    <title>dot net notts</title>
 
@@ -36,7 +35,7 @@
 		        <div class="collapse navbar-collapse navbar-ex1-collapse">
 			        <ul class="nav navbar-nav navbar-right">
             			<li data-bind="css: { active: pager.activePage$().getId() === 'home' }">
-            				<a data-bind="page-href: '/'" href="/">Home</a>
+            				<a data-bind="page-href: 'home'" href="/">Home</a>
             			</li>
             			<li data-bind="css: { active: pager.activePage$().getId() === 'events' }">
             				<a data-bind="page-href: 'events'" href="#">Events</a>
@@ -52,9 +51,9 @@
       		</div>
     	</nav>
 
-    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'Nottingham .NET User Group', sourceOnShow: 'home.html', withOnShow: getViewModel }"></div>
+    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'Nottingham .NET User Group', sourceOnShow: 'home.html', withOnShow: getViewModel, sourceCache: true }"></div>
 
-    	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - Nottingham .NET User Group', sourceOnShow: 'events.html', with: events }"></div>
+    	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - Nottingham .NET User Group', sourceOnShow: 'events.html', withOnShow: getViewModel, sourceCache: true }"></div>
 
     	<div id="event-page" data-bind="page: { id: 'event', params: ['eventId'], title: 'Event - Nottingham .NET User Group', sourceOnShow: 'event.html', with: event }"></div>
 		
@@ -102,7 +101,6 @@
 	    <script type="text/javascript" src="assets/js/libs/underscore.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/bootstrap.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
-	    <script type="text/javascript" src="assets/js/libs/history.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/plugins.js"></script>
 	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
@@ -178,20 +176,21 @@
 		    };
 	    </script>
 	    <script>
-	    	pager.useHTML5history = true;
-	    	pager.Href5.history = History;
+	    	// pager.useHTML5history = true;
+	    	// pager.Href5.history = History;
 
-	    	var viewModel = new function() { 
-	    		var self = this;
-	    		self.home = null;
-	    		self.events = null;
-	    		self.event = null;
-	    		self.sponsors = null;
+	    	var viewModel = { 
+	    		home: null,
+	    		event: null,
+	    		events: null,
+	    		sponsors: null,
+	    		venue: null
 	    	};
 
+			pager.Href.hash = '#!/';
 	    	pager.extendWithPage(viewModel);
 	    	ko.applyBindings(viewModel);
-			pager.startHistoryJs();
+			pager.start();
 	    </script>
 	</body>
 </html>
