@@ -55,19 +55,17 @@
 
     	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - Nottingham .NET User Group', sourceOnShow: 'events.html', withOnShow: getViewModel, sourceCache: true }"></div>
 
-    	<div id="event-page" data-bind="page: { id: 'event', params: ['eventId'], title: 'Event - Nottingham .NET User Group', sourceOnShow: 'event.html', with: event }"></div>
-		
     	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - Nottingham .NET User Group', sourceOnShow: 'sponsors.html', with: sponsors }"></div>
 
     	<div data-bind="page: { id: 'venue', title: 'Venue - Nottingham .NET User Group', sourceOnShow: 'venue.html', withOnShow: venueOnShow, sourceCache: true }"></div>
 
 		<div class="section-colored">
       		<div class="container">
-        		<h3 class="section-title text-center">Our Sponsors</h3>
   
         		<div class="container clients">
+        		<h3 class="section-title text-center">Our Sponsors</h3>
 		          	<div class="row">
-		            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+<!-- 		            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
 		              		<a href="#"><img class="img-responsive" src="http://placehold.it/243x120" alt="sponsor 1"></a>
 		            	</div>
 
@@ -90,7 +88,11 @@
 		            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
 		              		<a href="#"><img class="img-responsive" src="http://placehold.it/243x120" alt="sponsor 6"></a>
 		            	</div>
-		          	</div>
+ -->		        
+ 						<div class="col-xs-12">
+ 							<p class="text-muted text-center">Coming soon</p>
+ 						</div>
+ 					</div>
 		        </div>
 		    </div>
     	</div>
@@ -181,7 +183,6 @@
 
 	    	var viewModel = { 
 	    		home: null,
-	    		event: null,
 	    		events: null,
 	    		sponsors: null,
 	    		venue: null
