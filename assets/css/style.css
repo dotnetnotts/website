@@ -979,4 +979,14 @@ footer .input-group-btn .btn{
     width: 65%;
   }
 
+  .navbar-brand img {
+    width: 57px;
+    height: 22px;
+    padding-top: 5px;
+  }
+
+  .navbar-brand {
+    font-size: 18px !important;   
+  }
+
 }
