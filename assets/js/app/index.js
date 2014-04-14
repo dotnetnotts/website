@@ -31,6 +31,7 @@ var require = new gurequire(viewModelFactory);
 var getViewModel = function(callback, page) {
 	var viewModel = require.getViewModel(page.id());
 	callback(viewModel);
+
 };
 
 var venueOnShow = function(callback, page) {
@@ -62,3 +63,8 @@ var venueOnShow = function(callback, page) {
       	infowindow.open(map, marker);
     });
 };
+
+var globalOnShow = function(callback, page) {
+    dotnetnotts.Plugins.initSocialNetworkIcons();
+    dotnetnotts.Plugins.initBrowserPlaceholder();
+}

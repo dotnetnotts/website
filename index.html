@@ -13,6 +13,7 @@
 	    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 	    <link href="assets/css/bootstrap.css" rel="stylesheet">
 	    <link href="assets/css/style.css" rel="stylesheet">
+	    <link href="assets/css/spinner.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -51,11 +52,12 @@
       		</div>
     	</nav>
 
-    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'dot net notts', sourceOnShow: 'home.html', withOnShow: getViewModel, sourceCache: true }"></div>
+    	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'dot net notts', sourceOnShow: 'home.html', withOnShow: getViewModel, sourceCache: true }">
+    	</div>
 
     	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - dot net notts', sourceOnShow: 'events.html', withOnShow: getViewModel, sourceCache: true }"></div>
 
-    	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - dot net notts', sourceOnShow: 'sponsors.html', with: sponsors }"></div>
+    	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - dot net notts', sourceOnShow: 'sponsors.html', with: sponsors, withOnShow: globalOnShow, sourceCache: true }"></div>
 
     	<div data-bind="page: { id: 'venue', title: 'Venue - dot net notts', sourceOnShow: 'venue.html', withOnShow: venueOnShow, sourceCache: true }"></div>
 
@@ -88,8 +90,9 @@
 	    <script type="text/javascript" src="assets/js/libs/pager.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/underscore.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/bootstrap.js"></script>
-	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/plugins.js"></script>
+	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
+	    <script type="text/javascript" src="assets/js/libs/extras.js"></script>
 	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
 	    <script type="text/javascript" src="assets/js/app/namespaces.js"></script>

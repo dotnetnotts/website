@@ -25,6 +25,9 @@
 		    </div>
 
 		    <div class="container container-int">
+		    	<!--ko if:!_.any(events())-->
+		    		<div class="spinner"></div>
+		    	<!--/ko-->
 			    <!--ko foreach: events-->
 		    	<div class="row">
 			        <div class="col-md-5 col-sm-5" style="text-align: center;">
