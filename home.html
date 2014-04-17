@@ -36,9 +36,17 @@
 			        <div class="col-md-7 col-sm-7">
 			          	<h3><a data-bind="attr: { href: event_url }, text: name"></a></h3>
 			          	<h4 data-bind="text: moment(time).format('dddd MMMM Do, YYYY [at] h:mm a')"></h4>
-			          	<p class="text-muted" style="margin-bottom: 20px">Venue to be decided</p>
+			          	<p class="text-muted" style="margin-bottom: 20px">
+			          		<!--ko if:venue === 'undefined'-->
+			          		Venue to be decided
+			          		<!--/ko-->
+			          		<!--ko if:venue !== 'undefined'-->
+				          		<a href="#" data-bind="page-href: 'venue'">
+				          			<span data-bind="text: venue.name"></span>, <span data-bind="text: venue.address_1"></span>, <span data-bind="text: venue.city"></span> 
+				          		</a>
+			          		<!--/ko-->
+			          	</p>
 			          	<a class="btn btn-primary btn-lg" data-bind="attr: { href: event_url }"><!--ko text:yes_rsvp_count--><!--/ko--> Attending <i class="fa fa-angle-right"></i></a>
-			          	<!-- <a class="btn btn-default" data-bind="attr: { href: event_url }">Map of venue <i class="fa fa-angle-right"></i></a> -->
 			        </div>
 		    	</div>
 		    	<hr />
