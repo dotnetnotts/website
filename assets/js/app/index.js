@@ -18,7 +18,7 @@ var viewModelFactory = {
 	initViewModel: function(id) {
 		switch (id) {
 			case "home":
-				return new NottsDotNet.ViewModels.EventsSummaryViewModel(2);
+				return new NottsDotNet.ViewModels.EventsSummaryViewModel(1);
 
 			case "events":
 				return new NottsDotNet.ViewModels.EventsSummaryViewModel(10);
