@@ -14,7 +14,7 @@
 			    </div>
 			</div>
 
-    		<div class="section-header">
+            <div class="section-header">
 		      	<div class="container">
 		        	<div class="row">
 		          		<div class="col-lg-12">
@@ -31,7 +31,13 @@
 			    <!--ko foreach: events-->
 		    	<div class="row">
 			        <div class="col-md-5 col-sm-5" style="text-align: center;">
-			        	<a data-bind="attr: { href: event_url }"><img src="/assets/img/dotnetnotts-avatar-circle.png" /></a>
+                        <a data-bind="attr: { href: event_url }" style="position:relative">
+                            <img src="https://pbs.twimg.com/profile_images/483322018062819328/0xsOTY-J.jpeg" style="height:200px; width:200px; border-radius:100px;"/>
+                            <!--<img src="/assets/img/tash.png" style="position: absolute; top:10px; left:35px; width:100px;"/>-->
+                        </a>
+			        	<!--<a data-bind="attr: { href: event_url }">
+                            <img src="/assets/img/dotnetnotts-avatar-circle.png" />
+                        </a>-->
 			        </div>
 			        <div class="col-md-7 col-sm-7">
 			          	<h3 style="line-height: 1.3em"><a data-bind="attr: { href: event_url }, text: name"></a></h3>
@@ -51,7 +57,7 @@
 		    	</div>
 		    	<hr />
 			    <!--/ko-->
-<!-- 				<div class="well">
+				<!--<div class="well">
 					<h3>Subscribe to our mailing list</h3>
 					<form action="http://weiran.us8.list-manage.com/subscribe/post?u=c0b589ac117294c5577aded22&amp;id=b956678012" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 						<div class="form-group">

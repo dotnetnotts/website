@@ -7,17 +7,13 @@
 	    <meta name="description" content="Dotnetnotts user group. A group for anyone interested in Microsoft Technologies, HTML5, CSS3, and modern JavaScript frameworks.">
 	    <meta name="author" content="Weiran Zhang, Marvin Rounce">
 	    <meta name="HandheldFriendly" content="True" />
-
 	    <title>dot net notts</title>
-
 	    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 	    <link href="assets/css/bootstrap.css" rel="stylesheet">
 	    <link href="assets/css/style.css" rel="stylesheet">
 	    <link href="assets/css/spinner.css" rel="stylesheet">
 	</head>
-
 	<body>
-
 		<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       		<div class="container">
         		<div class="navbar-header">
@@ -32,7 +28,6 @@
           				dot net notts
           			</a>
         		</div>
-
 		        <div class="collapse navbar-collapse navbar-ex1-collapse">
 			        <ul class="nav navbar-nav navbar-right">
             			<li data-bind="css: { active: pager.activePage$().getId() === 'home' }">
@@ -41,9 +36,9 @@
             			<li data-bind="css: { active: pager.activePage$().getId() === 'events' }">
             				<a data-bind="page-href: 'events'" href="#">Events</a>
             			</li>
-            			<li data-bind="css: { active: pager.activePage$().getId() === 'sponsors' }">
+            			<!--<li data-bind="css: { active: pager.activePage$().getId() === 'sponsors' }">
             				<a data-bind="page-href: 'sponsors'" href="#">Sponsors</a>
-            			</li>
+            			</li>--!>
             			<li data-bind="css: { active: pager.activePage$().getId() === 'venue' }">
             				<a data-bind="page-href: 'venue'" href="#">Venue</a>
             			</li>
@@ -51,26 +46,20 @@
         		</div>
       		</div>
     	</nav>
-
     	<div id="home-page" data-bind="page: { id: 'home', role: 'start', title: 'dot net notts', sourceOnShow: 'home.html', withOnShow: getViewModel, sourceCache: true }">
     	</div>
-
     	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - dot net notts', sourceOnShow: 'events.html', withOnShow: getViewModel, sourceCache: true }"></div>
-
     	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - dot net notts', sourceOnShow: 'sponsors.html', with: sponsors, withOnShow: globalOnShow, sourceCache: true }"></div>
-
     	<div data-bind="page: { id: 'venue', title: 'Venue - dot net notts', sourceOnShow: 'venue.html', withOnShow: venueOnShow, sourceCache: true }"></div>
-
 		<div class="section-colored">
       		<div class="container">
-  
         		<div class="container clients">
-	        		<h2 class="section-title text-center">Partner Sponsor</h2>
+	        		<h2 class="section-title text-center">Sponsored By</h2>
 	        		<div class="row">
 		          		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		            	</div>
 		          		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-			        		<a href="http://microlise.com"><img class="img-responsive" src="/assets/img/sponsors/microlise.png" alt="Microlise" style="margin: 0 auto"></a>
+			        		<a href="http://microlise.com"><img class="img-responsive" src="/assets/img/sponsors/cordius.png" alt="Microlise" style="margin: 0 auto"></a>
 		            	</div>
 		          		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		            	</div>
@@ -79,30 +68,35 @@
 	            <hr>
 	            <div class="container clients">
 		          	<div class="row">
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-		            	</div>
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
 		              		<a href="http://www.syncfusion.com/resources/techportal/ebooks?utm_medium=usergroup_nottingham"><img class="img-responsive" src="/assets/img/sponsors/syncfusion.png" alt="Syncfusion" style="margin: 0 auto"></a>
 		            	</div>
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-		              		<a href="http://postsharp.net"><img class="img-responsive" src="/assets/img/sponsors/postsharp.png" alt="PostSharp" style="margin: 0 auto"></a>
+		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+		              		<a href="http://postsharp.net">
+                                <img class="img-responsive" src="/assets/img/sponsors/postsharp.png" alt="PostSharp" style="margin: 0 auto"></a>
 		            	</div>
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-		              		<a href="http://jetbrains.com"><img class="img-responsive" src="/assets/img/sponsors/jetbrains.png" alt="JetBrains" style="margin: 0 auto"></a>
+		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+		              		<a href="http://jetbrains.com">
+                                <img class="img-responsive" src="/assets/img/sponsors/jetbrains.png" alt="JetBrains" style="margin: 0 auto"></a>
 		            	</div>
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-		              		<a href="http://pluralsight.com"><img class="img-responsive" src="/assets/img/sponsors/pluralsight.png" alt="Pluralsight" style="margin: 0 auto"></a>
+		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+		              		<a href="http://pluralsight.com">
+                                <img class="img-responsive" src="/assets/img/sponsors/pluralsight.png" alt="Pluralsight" style="margin: 0 auto"></a>
 		            	</div>
-		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+		          		<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                            <a href="http://www.sqlsmash.com/">
+                                <img class="img-responsive" src="/assets/img/sponsors/sqlsmash.png" alt="Pluralsight" style="margin: 0 auto"></a>
+		            	</div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                            <a href="http://rd.gt/1b4fbKj">
+                                <img class="img-responsive" src="/assets/img/sponsors/redgate.png" alt="Pluralsight" style="margin: 0 auto"></a>
 		            	</div>
  					</div>
 		        </div>
 		    </div>
     	</div>
-
     	<footer>
       <div class="container">
-
         <div class="row">
           <div class="col-lg-6 col-md-6">
             <a class="footer-brand" href="index.html">dot net notts</a>
@@ -116,7 +110,6 @@
               <i class="fa fa-envelope"></i> <a href="mailto:marvin@click19.co.uk">marvin@click19.co.uk</a>
             </address>
           </div>
-
           <div class="col-lg-3 col-md-3">
             <h3>NEWSLETTER</h3>
             <p>Type your email address below and subscribe to our newsletter</p>
@@ -130,10 +123,8 @@
             </form>
           </div>
         </div><!-- /.row -->
-
       </div><!-- /.container -->
     </footer>
-
 	    <script type="text/javascript" src="assets/js/libs/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/knockout.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/pager.js"></script>
@@ -143,14 +134,11 @@
 	    <script type="text/javascript" src="assets/js/libs/moment.min.js"></script>
 	    <script type="text/javascript" src="assets/js/libs/extras.js"></script>
 	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-
 	    <script type="text/javascript" src="assets/js/app/namespaces.js"></script>
 	    <script type="text/javascript" src="assets/js/app/constants.js"></script>
 	    <script type="text/javascript" src="assets/js/app/events-summary-view-model.js"></script>
-
 	    <script type="text/javascript" src="assets/js/app/index.js"></script>
 	    <script type="text/javascript" src="assets/js/app/pager-setup.js"></script>
-	    
 	    <script>
             if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
                 var msViewportStyle = document.createElement("style");
