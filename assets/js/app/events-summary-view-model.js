@@ -63,17 +63,18 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
     
     function fixUpEventImages(events) {
         _.forEach(events, function (e) {
+            var desc = stripHtml(e.description);
+            var avatar = "/assets/img/speakers/";
+            var twitterHandle = undefined;
             e.avatar = "/assets/img/dotnetnotts-avatar-circle.png"
-            var parts = e.description.split("Twitter @");
+            var parts = desc.split("Twitter @");
 
             if (parts.length > 1) {
-                var rawTwitterHandle = parts[1].split(" ")[0];
-                var twitterHandle = stripHtml(rawTwitterHandle);             
-                var avatar = "http://avatars.io/twitter/";
+                twitterHandle = parts[1].split(" ")[0];           
             }
             
             if (twitterHandle) {
-                e.avatar = avatar + twitterHandle + "?size=large";
+                e.avatar = avatar + twitterHandle.replace(/\s+/, "")  + ".png";
             }
         });
     }
