@@ -6,6 +6,8 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 	};
 
 	self.events = ko.observableArray();
+    
+    self.pastEvents = ko.observableArray();
 
 	var _fetchEvents = function() {
 		$.ajax({
@@ -25,10 +27,30 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 			upcomingEvents = _.first(upcomingEvents, limit);
 			self.events(upcomingEvents);
 			self.delegate.initialFetchCompleted();
+            _fetchPastEvents();
 		});
 	};
+    
+    var _fetchPastEvents = function () {
+        $.ajax({
+			type: "GET",
+			url: "https://api.meetup.com/2/events",
+			crossDomain: true,
+			dataType: "jsonp",
+			data: {
+				group_id: 13372672,
+				key: NottsDotNet.Constants.MeetupApiKey,
+				sign: true,
+				limit: limit,
+                status: "past"
+			}
+		}).done(function(response) {
+            self.pastEvents(response.results);
+        });
+    };
 
 	(function init() {
+        debugger;
 		_fetchEvents();
 	})();
 }
