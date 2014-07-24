@@ -73,7 +73,7 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
             }
             
             if (twitterHandle) {
-                e.avatar = avatar + twitterHandle;
+                e.avatar = avatar + twitterHandle + "?size=large";
             }
         });
     }
