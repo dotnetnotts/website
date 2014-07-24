@@ -15,7 +15,9 @@
     <!--ko foreach: events-->
     <div class="row">
         <div class="col-md-5 col-sm-5" style="text-align: center;">
-          <span style="font-family: 'pacificoregular'; font-size: 64px;">.net</span>
+             <a data-bind="attr: { href: event_url }" style="position:relative">
+                <img data-bind="attr: { src: avatar }" style="height:200px; width:200px; border-radius:100px;"/>
+            </a>
         </div>
         <div class="col-md-7 col-sm-7">
             <h3 style="line-height: 1.3em"><a data-bind="attr: { href: event_url }, text: name"></a></h3>
@@ -54,7 +56,9 @@
     <!--ko foreach: pastEvents-->
     <div class="row">
         <div class="col-md-5 col-sm-5" style="text-align: center;">
-          <span style="font-family: 'pacificoregular'; font-size: 64px;">.net</span>
+          <a data-bind="attr: { href: event_url }" style="position:relative">
+                <img data-bind="attr: { src: avatar }" style="height:200px; width:200px; border-radius:100px;"/>
+            </a>
         </div>
         <div class="col-md-7 col-sm-7">
             <h3 style="line-height: 1.3em"><a data-bind="attr: { href: event_url }, text: name"></a></h3>

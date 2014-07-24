@@ -24,6 +24,7 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 		})
 		.done(function(response) {
 			var upcomingEvents = _.first(response.results, limit);
+            fixUpEventImages(upcomingEvents);
 			self.events(upcomingEvents);
 			self.delegate.initialFetchCompleted();
             _fetchPastEvents();
@@ -49,6 +50,9 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
                 if (b.time < a.time) return -1;
                 return 0;
             });
+            
+            fixUpEventImages(pastEvents);
+            
             self.pastEvents(response.results);
         });
     };
@@ -56,4 +60,27 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 	(function init() {
 		_fetchEvents();
 	})();
+    
+    function fixUpEventImages(events) {
+        _.forEach(events, function (e) {
+            e.avatar = "/assets/img/dotnetnotts-avatar-circle.png"
+            var parts = e.description.split("Twitter @");
+
+            if (parts.length > 1) {
+                var rawTwitterHandle = parts[1].split(" ")[0];
+                var twitterHandle = stripHtml(rawTwitterHandle);             
+                var avatar = "http://avatars.io/twitter/";
+            }
+            
+            if (twitterHandle) {
+                e.avatar = avatar + twitterHandle;
+            }
+        });
+    }
+    
+    function stripHtml(html) {
+       var tmp = document.createElement("DIV");
+       tmp.innerHTML = html;
+       return tmp.textContent || tmp.innerText || "";
+    }
 }
