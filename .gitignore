@@ -37,3 +37,6 @@ ehthumbs.db
 Thumbs.db
 
 node_modules
+
+### VisualStudioCode ###
+.vscode
