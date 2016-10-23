@@ -64,9 +64,9 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
     function fixUpEventImages(events) {
         _.forEach(events, function (e) {
             var desc = stripHtml(e.description);
-            var avatar = "/assets/img/speakers/";
+            var avatar = "assets/img/speakers/";
             var twitterHandle = undefined;
-            e.avatar = "/assets/img/dotnetnotts-avatar-circle.png";
+            e.avatar = "assets/img/dotnetnotts-avatar-circle.png";
             var parts = desc.split("Twitter @");
 
             if (parts.length > 1) {
