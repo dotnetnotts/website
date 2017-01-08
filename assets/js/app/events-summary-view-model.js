@@ -76,6 +76,8 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
             if (twitterHandle) {
                 e.avatar = avatar + twitterHandle.replace(/\s+/, "")  + ".png";
             }
+
+			e.avatar = e.avatar.toLowerCase();
         });
     }
     
