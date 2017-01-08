@@ -35,10 +35,10 @@ var getViewModel = function(callback, page) {
 };
 
 var venueOnShow = function(callback, page) {
-    var location = new google.maps.LatLng(52.952751,-1.144389);
+    var location = new google.maps.LatLng(52.948871,-1.150837);
 
     var mapOptions = {
-      	zoom: 13,
+      	zoom: 17,
       	center: location,
       	mapTypeId: google.maps.MapTypeId.ROADMAP,
       	scrollwheel: false,
@@ -47,7 +47,7 @@ var venueOnShow = function(callback, page) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var contentString = '<p style="line-height: 20px;"><strong>Eve\'s Cafe</strong></p><p>Lace Market Square, Nottingham<br /><a href="https://www.google.co.uk/maps/place/Nottingham/@52.9527845,-1.144595,17z/data=!3m1!4b1!4m2!3m1!1s0x4879c17d8e55f2c7:0x41df8e6b8e905e01">Get directions</a></p>';
+    var contentString = '<p style="line-height: 20px;"><strong>UNiDAYS Office</strong></p><p>2 Castle Blvd, Nottingham<br /><a href="https://goo.gl/maps/QnyRFZDECX12">Get directions</a></p>';
 
     var infowindow = new google.maps.InfoWindow({
       	content: contentString
