@@ -35,6 +35,7 @@ var getViewModel = function(callback, page) {
 };
 
 var venueOnShow = function(callback, page) {
+    return;
     var location = new google.maps.LatLng(52.948871,-1.150837);
 
     var mapOptions = {
