@@ -1,4 +1,4 @@
-NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
+NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit, fetchPastEvents) {
 	var self = this;
 
 	self.delegate = {
@@ -6,6 +6,8 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 	};
 
 	self.events = ko.observableArray();
+
+	self.hasNoUpcomingEvents = ko.observable(false);
     
     self.pastEvents = ko.observableArray();
 
@@ -15,11 +17,16 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 			url: "https://dotnetnotts-api.azurewebsites.net/api/events/next"
 		})
 		.done(function(response) {
-			var upcomingEvents = _.first(response.results, limit);
-            fixUpEventImages(upcomingEvents);
-			self.events(upcomingEvents);
-			self.delegate.initialFetchCompleted();
-            _fetchPastEvents();
+			if (!response.results || response.results.length == 0) {
+				self.hasNoUpcomingEvents(true);
+				self.delegate.initialFetchCompleted();
+			} else {
+				var upcomingEvents = _.first(response.results, limit);
+            	fixUpEventImages(upcomingEvents);
+				self.events(upcomingEvents);
+				self.delegate.initialFetchCompleted();
+			}
+			if (fetchPastEvents) _fetchPastEvents();
 		});
 	};
     
