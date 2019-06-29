@@ -12,7 +12,7 @@ NottsDotNet.ViewModels.EventsSummaryViewModel = function(limit) {
 	var _fetchEvents = function() {
 		$.ajax({
 			type: "GET",
-			url: "https://dotnetnotts-api.azurewebsites.net/api/events/past"
+			url: "https://dotnetnotts-api.azurewebsites.net/api/events/next"
 		})
 		.done(function(response) {
 			var upcomingEvents = _.first(response.results, limit);
