@@ -1,0 +1,92 @@
+a {
+  color: #c0392b;
+}
+
+a:hover, a:focus {
+  color: #e74c3c;
+}
+
+blockquote {
+  border-left: 5px solid #c0392b;
+}
+
+.navbar{
+  border-bottom: 2px solid #c0392b;
+}
+
+.navbar-inverse {
+  background-color: #e74c3c;
+  border-color: #c0392b;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  background-color: #c0392b;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #c0392b;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #c0392b;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: #c0392b;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #c0392b;
+}
+
+.dropdown-menu{
+  background-color: #c0392b;
+}
+
+.post-meta .fa{
+  color: #c0392b;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #c0392b;
+}
+
+.tags a{
+  background: #e74c3c;
+}
+
+.tags a:hover{
+  background: #c0392b;
+}
+
+.label-default {
+  background-color: #e74c3c;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+  background-color: #c0392b;
+}
+
+.form-control:focus{
+  border-color: #e74c3c;
+}
+
+.block-icon{
+  background: #e74c3c;
+}
+
+.pricing-table .panel-default > .panel-heading{
+  background-color: #c0392b;
+}
+
+.pricing-table .panel-default > .panel-body{
+  background-color: #e74c3c;
+}
+
+h3.error-404 {
+  color: #c0392b;
+}
