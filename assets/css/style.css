@@ -600,6 +600,23 @@ div.list-posts ul li a:hover{
   background-color: #95A5A6;
 }
 
+.btn-rounded{
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  background-color: #16A085;
+}
+
+.btn-rounded a{
+  color: #FFF;
+}
+
 .input-group-btn:last-child > .btn {
   padding: 7px 12px;
 }
@@ -844,6 +861,12 @@ img.monster{
 .list-group-item {
   background-color: #FAFAFA;
   border: 1px solid #ECEBEB;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Footer Styles */
