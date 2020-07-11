@@ -32,21 +32,26 @@
 			        <ul class="nav navbar-nav navbar-right">
             			<li data-bind="css: { active: pager.activePage$().getId() === 'home' }">
             				<a data-bind="page-href: 'home'" href="/">Home</a>
-            			</li>
+						</li>
+						
             			<li data-bind="css: { active: pager.activePage$().getId() === 'events' }">
             				<a data-bind="page-href: 'events'" href="#">Events</a>
+						</li>
+						
+						<li data-bind="css: { active: pager.activePage$().getId() === 'speak' }">
+            				<a data-bind="page-href: 'speak'" href="#">Speak!</a>
             			</li>
             			<!--<li data-bind="css: { active: pager.activePage$().getId() === 'sponsors' }">
             				<a data-bind="page-href: 'sponsors'" href="#">Sponsors</a>
             			</li> -->
 
-            			<!-- <li data-bind="css: { active: pager.activePage$().getId() === 'venue' }">
-            				<a data-bind="page-href: 'venue'" href="#">Venue</a>
-						</li> -->
-
 						<li>
             				<a href="https://dotnet.microsoft.com/learn" target="_blank">Learn .NET</a>
 						</li>
+
+            <!--<li data-bind="css: { active: pager.activePage$().getId() === 'venue' }">
+            				<a data-bind="page-href: 'venue'" href="#">Venue</a>
+						</li>-->
 						
 						<li data-bind="css: { active: pager.activePage$().getId() === 'codeofconduct' }">
             				<a data-bind="page-href: 'codeofconduct'" href="#">Code Of Conduct</a>
@@ -60,6 +65,7 @@
     	<div id="events-page" data-bind="page: { id: 'events', title: 'Events - dot net notts', sourceOnShow: 'events.html', withOnShow: getViewModel, sourceCache: true }"></div>
     	<div data-bind="page: { id: 'sponsors', title: 'Sponsors - dot net notts', sourceOnShow: 'sponsors.html', with: sponsors, withOnShow: globalOnShow, sourceCache: true }"></div>
     	<div data-bind="page: { id: 'venue', title: 'Venue - dot net notts', sourceOnShow: 'venue.html', withOnShow: venueOnShow, sourceCache: true }"></div>
+    	<div data-bind="page: { id: 'speak', title: 'Speak! - dot net notts', sourceOnShow: 'speak.html', withOnShow: globalOnShow, sourceCache: true }"></div>
     	<div data-bind="page: { id: 'codeofconduct', title: 'Code Of Conduct - dot net notts', sourceOnShow: 'codeofconduct.html', withOnShow: globalOnShow, sourceCache: true }"></div>
     	<div data-bind="page: { id: 'speakerinfo', title: 'Speaker Information - dot net notts', sourceOnShow: 'speakerinfo.html', withOnShow: globalOnShow, sourceCache: true }"></div>
 		<div class="section-colored" style="padding-top:15px">
