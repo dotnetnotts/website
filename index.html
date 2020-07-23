@@ -53,6 +53,10 @@
             				<a data-bind="page-href: 'venue'" href="#">Venue</a>
 						</li>-->
 						
+						<li data-bind="css: { active: pager.activePage$().getId() === 'speakerinfo' }">
+            				<a data-bind="page-href: 'speakerinfo'" href="#">Speaker Info</a>
+            			</li>
+
 						<li data-bind="css: { active: pager.activePage$().getId() === 'codeofconduct' }">
             				<a data-bind="page-href: 'codeofconduct'" href="#">Code Of Conduct</a>
             			</li>
@@ -95,10 +99,9 @@
           <div class="col-lg-3 col-md-3">
             <h3>CONTACT</h3>
             <address>
-              <i class="fa fa-twitter"></i> <a href="https://twitter.com/dotnetnotts">@dotnetnotts</a><br>
-              <i class="fa fa-envelope"></i> <a href="mailto:weiran@zhang.me.uk">weiran@zhang.me.uk</a><br>
-							<i class="fa fa-envelope"></i> <a href="mailto:marvin@click19.co.uk">marvin@click19.co.uk</a><br>
-							<i class="fa fa-envelope"></i> <a href="mailto:pete@pjgcreations.co.uk">pete@pjgcreations.co.uk</a>
+              	<i class="fa fa-twitter"></i> <a href="https://twitter.com/dotnetnotts">@dotnetnotts</a><br>
+				<i class="fa fa-envelope"></i> <a href="mailto:pete@pjgcreations.co.uk">pete@pjgcreations.co.uk</a><br>
+				<i class="fa fa-envelope"></i> <a href="mailto:me@jesswhite.co.uk">me@jesswhite.co.uk</a>
             </address>
           </div>
         </div><!-- /.row -->
